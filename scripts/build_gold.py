@@ -44,7 +44,7 @@ print(f"✔ KPI 2 saved: gold_revenue_by_region.csv")
 # ── KPI 3: Monthly Revenue Trend ─────────────────────────
 kpi3 = con.execute("""
     SELECT Year, Month, Month_Name,
-           ROUND(SUM(Sales), 2)        AS total_revenue
+           ROUND(SUM(Sales), 2) AS total_revenue
     FROM silver
     GROUP BY Year, Month, Month_Name
     ORDER BY Year, Month
@@ -75,8 +75,8 @@ print(f"✔ KPI 5 saved: gold_top_category.csv")
 # ── KPI 6: Revenue by Ship Mode ──────────────────────────
 kpi6 = con.execute("""
     SELECT "Ship Mode",
-           ROUND(SUM(Sales), 2)        AS total_revenue,
-           COUNT(*)                    AS total_orders
+           ROUND(SUM(Sales), 2) AS total_revenue,
+           COUNT(*)             AS total_orders
     FROM silver
     GROUP BY "Ship Mode"
     ORDER BY total_revenue DESC

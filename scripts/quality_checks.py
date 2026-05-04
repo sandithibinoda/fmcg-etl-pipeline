@@ -38,6 +38,7 @@ print(f"{status} — Row Count       : Bronze={len(bronze)}, Silver={len(silver)
 # ── Check 4: Schema validation ───────────────────────────
 expected_cols = ["Sales", "Quantity", "Category", "Order Date", "Region",
                  "Year", "Month", "Month_Name", "Day_of_Week", "Revenue"]
+
 missing_cols  = [c for c in expected_cols if c not in silver.columns]
 status = "✔ PASS" if not missing_cols else "✘ FAIL"
 results.append(("Schema Validation", status, f"Missing: {missing_cols}"))
